@@ -70,6 +70,11 @@ responses = [
 
 # Output the alphabetized list of responses
 
+let sorted = responses.sort()
+console.log(`${sorted}`)
+
+
+
 # puts responses.sort
 
 
