@@ -88,29 +88,40 @@ let quotes = [
 // Zoe has 6 quotes.
 // console.log(`Zoe has ${numberOfQuotes("Zoe")} quotes.`)
 
+
+
+
 // 2. Which character said `"I am a leaf on the wind. Watch how I soar."`? Write a function called `whoSaidThis` that takes one argument, the quote. This function should return the name of the person who said the quote. If your function is set up properly you should be able to call `whoSaidThis("I am a leaf on the wind. Watch how I soar.")` and `whoSaidThis("Let's be bad guys.")` and get the Expected Output below:
+
+
+// SUMMARY: what am I looking for?
+// the  name of the person who said a certain quote.
+//
+// ONE  search for the sentence in the quotes arrays
+// -use foreach and use a method to get the index back  on each
+//
+// TWO use crewmember[3] to grab the name and return it
+// -once the foreach loop  is done, use the number i got back from step 1 and say, crewmember name, and then [] and that would give me the name.
+
+// 3. youre going to get 'Wash' back which is already set below  in the to have the value of a quote
 
 // ANSWER FOR NUMBER 2
 
+let whoSaidThis = (washQuote) => {
+    quotes.forEach((quoteBatch,index)=>{
+        if (quoteBatch.includes(washQuote)){
+            crewIndex = index
 
-// 1.1 Do a search for the sentence using foreach
-//  1.2 get the index back where the sentence appears using a method in the foreach  (its a bunch of nested arrays and need to check each and apply method to each)
-//
-// 2. once the foreach loop  is done, use the number i got back from step 1 and say, crewmember name, and then [] and that would give me the name.
-// so use crewmember[3] to grab the name and return it
-//
-// 3. youre going to get 'Wash' back which is already set below  in the to have the value of a quote
 
-// let WhoSaidThis = (washQuote)={
-//     quotes.forEach((batch)=>{
-//         if (batch.includes(quote)){
-//             return batch.indexOf[quote]
-//
-//             personWhoSaid = crewmember[quote]
-//         }
-//
-//     })
-// }
+        }
+
+
+
+    })
+
+
+return crewMembers[crewIndex]
+}
 
 
 // let whoSaidThis = (washQuote) => {
@@ -126,9 +137,9 @@ let quotes = [
 
 
 
-// Wash says: I am a leaf on the wind. Watch how I soar.
-// let washQuote = "I am a leaf on the wind. Watch how I soar."
-// console.log(`${whoSaidThis(washQuote)} says: ${washQuote}`)
+
+let washQuote = "I am a leaf on the wind. Watch how I soar."
+console.log(`${whoSaidThis(washQuote)} says: ${washQuote}`)
 
 
 
@@ -166,16 +177,18 @@ let quotes = [
 
 // ANSWER FOR NUMBER 3:
 
-let longestQuote = (name) => {
-let information = crewMembers.indexOf(name)
-let quoteBatch = quotes[information]
 
-quoteBatch.forEach((quote)=>{
-    quoteLength = quote.length
-})
-return quoteLength
-}
-console.log(`Book's longest quote is: ${longestQuote("Book")}`)
+
+// let longestQuote = (name) => {
+// let information = crewMembers.indexOf(name)
+// let quoteBatch = quotes[information]
+//
+// let longest = quoteBatch.sort(function (a, b) { return b.length - a.length; })[0];
+// return longest
+//
+//
+// }
+// console.log(`Book's longest quote is: ${longestQuote("Book")}`)
 
 //
 //
