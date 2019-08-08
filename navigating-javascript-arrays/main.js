@@ -47,13 +47,13 @@ console.log(addMissingSupplies(supplies, missingSupplies))
 
 // Your code here....
 
-// let supplyCheck=(supplies)=>{
-//     supplies.forEach((item) => {
-//         console.log(`${item.toUpperCase()} is logged and accounted for`)
-//     });
-//
-// }
-// console.log(supplyCheck(supplies))
+let supplyCheck=(supplies)=>{
+    supplies.forEach((item) => {
+        console.log(`${item.toUpperCase()} is logged and accounted for`)
+    });
+
+}
+console.log(supplyCheck(supplies))
 
 // other way to do it
 // let supplyCheck=(supplies)=>{
@@ -71,10 +71,10 @@ console.log(addMissingSupplies(supplies, missingSupplies))
 
 // 2.) Create a function named stowSupplies that takes in our array of supplies, and returns item name and its index number in a formatted string.
 
-// let stowSupplies= (supplies) =>{
-//     supplies.forEach((item, index) => {
-//         console.log(`item name is ${item} index is ${index}`)
-//     });
+let stowSupplies= (supplies) =>{
+    supplies.forEach((item, index) => {
+        console.log(`item name is ${item} index is ${index}`)
+    });
 // }
 //
 //
@@ -82,29 +82,29 @@ console.log(addMissingSupplies(supplies, missingSupplies))
 
 // 3.) Create a function named addAlphabetically that takes in our array of supplies and a new supply item and returns an array of supplies with that new item, sorted alphabetically.
 //
-// let addAlphabetically = (supplies, i) =>{
-//         supplies.push(i)
-//         supplies.sort()
+let addAlphabetically = (supplies, i) =>{
+        supplies.push(i)
+        supplies.sort()
+
+        return(supplies)
+
+}
 //
-//         return(supplies)
-//
-// }
-// //
-// console.log(addAlphabetically(supplies, "laser pistol"))
+console.log(addAlphabetically(supplies, "laser pistol"))
 
 // 4.) Create a function named stockCheck that takes in an inventory checklist array, and an array of supplies, and returns an array of items that are missing from the checklist.
 
 
-// let stockCheck = (inventoryChecklist, supplies) =>{
-//     let missingItems = []
-//
-//     inventoryChecklist.forEach((supplyItem)=>{
-//         if(!supplies.includes(supplyItem)){
-//             missingItems.push(supplyItem)
-//         }
-//     })
-//     return missingItems
-// }
+let stockCheck = (inventoryChecklist, supplies) =>{
+    let missingItems = []
+
+    inventoryChecklist.forEach((supplyItem)=>{
+        if(!supplies.includes(supplyItem)){
+            missingItems.push(supplyItem)
+        }
+    })
+    return missingItems
+}
 
 
 
@@ -161,27 +161,27 @@ console.log(addMissingSupplies(supplies, missingSupplies))
 
 
 
-// let inventoryChecklist = ["big red button", "canister of oxygen", "freeze dried ice cream", "jetpack", "tang drink mix", "space helmet", "space brussels sprouts", "water recycler", "welding torch"]
-//
-// let supplies = ["space helmet", "canister of oxygen", "water recycler", "big red button", "freeze dried ice cream", "tang drink mix"]
-//
-// let stockCheck = (inventoryChecklist, supplies) =>{
-//     let missingItems = []
-//
-//     inventoryChecklist.forEach((supplyItem)=>{
-//         if(!supplies.includes(supplyItem)){
-//             missingItems.push(supplyItem)
-//         }
-//     })
-//     return missingItems
-// }
-//
-//
-// let addMissingSupplies = (supplies,moreSupplies)=>{
-//     return supplies.concat(moreSupplies)
-// }
+let inventoryChecklist = ["big red button", "canister of oxygen", "freeze dried ice cream", "jetpack", "tang drink mix", "space helmet", "space brussels sprouts", "water recycler", "welding torch"]
+
+let supplies = ["space helmet", "canister of oxygen", "water recycler", "big red button", "freeze dried ice cream", "tang drink mix"]
+
+let stockCheck = (inventoryChecklist, supplies) =>{
+    let missingItems = []
+
+    inventoryChecklist.forEach((supplyItem)=>{
+        if(!supplies.includes(supplyItem)){
+            missingItems.push(supplyItem)
+        }
+    })
+    return missingItems
+}
 //
 //
+let addMissingSupplies = (supplies,moreSupplies)=>{
+    return supplies.concat(moreSupplies)
+}
+
 //
 //
-// console.log(addMissingSupplies(supplies, missingSupplies)
+//
+console.log(addMissingSupplies(supplies, missingSupplies)

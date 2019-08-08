@@ -51,22 +51,22 @@ let quotes = [
 // the quote batch equals whatever number information is, and then need to cycle though that and count how many strings there are
 
 // ANSWER FOR NUMBER ONE:
-// let numberOfQuotes = (name) => {
-// let information = crewMembers.indexOf(name)
-// let quoteBatch = quotes[information]
-//
-// let count = 0
-//  quoteBatch.forEach((quote)=>{
-//  count += 1
-//
-//
-//  })
-//  return(`${name} has ${count} quotes`)
-// }
-//
-// console.log(numberOfQuotes("Zoe"))
-//
-// console.log(numberOfQuotes("Mal"))
+let numberOfQuotes = (name) => {
+let information = crewMembers.indexOf(name)
+let quoteBatch = quotes[information]
+
+let count = 0
+ quoteBatch.forEach((quote)=>{
+ count += 1
+
+
+ })
+ return(`${name} has ${count} quotes`)
+}
+
+console.log(numberOfQuotes("Zoe"))
+
+console.log(numberOfQuotes("Mal"))
 
 
 
@@ -124,15 +124,15 @@ return crewMembers[crewIndex]
 }
 
 
-// let whoSaidThis = (washQuote) => {
-//     let quotesBatch.forEach((quote)=>{
-//         if (quoteBatch.includes(quote)){
-//
-// return(`${personWhoSaid} said ${quote}`)
-// }
-//
-// });
-// }
+let whoSaidThis = (washQuote) => {
+    let quotesBatch.forEach((quote)=>{
+        if (quoteBatch.includes(quote)){
+
+return(`${personWhoSaid} said ${quote}`)
+}
+
+});
+}
 
 
 
@@ -145,8 +145,8 @@ console.log(`${whoSaidThis(washQuote)} says: ${washQuote}`)
 
 
 // Jayne says: Let's be bad guys.
-// let jayneQuote = "Let's be bad guys."
-// console.log(`${whoSaidThis(jayneQuote)} says: ${jayneQuote}`)
+let jayneQuote = "Let's be bad guys."
+console.log(`${whoSaidThis(jayneQuote)} says: ${jayneQuote}`)
 
 
 
@@ -179,19 +179,19 @@ console.log(`${whoSaidThis(washQuote)} says: ${washQuote}`)
 
 
 
-// let longestQuote = (name) => {
-// let information = crewMembers.indexOf(name)
-// let quoteBatch = quotes[information]
-//
-// let longest = quoteBatch.sort(function (a, b) { return b.length - a.length; })[0];
-// return longest
-//
-//
-// }
-// console.log(`Book's longest quote is: ${longestQuote("Book")}`)
+let longestQuote = (name) => {
+let information = crewMembers.indexOf(name)
+let quoteBatch = quotes[information]
 
-//
-//
+let longest = quoteBatch.sort(function (a, b) { return b.length - a.length; })[0];
+return longest
+
+
+}
+console.log(`Book's longest quote is: ${longestQuote("Book")}`)
+
+
+
 //  names are associated to quotebatches through index.
 //
 //  longestquote is going to return the index of a name and the matching quotebatch.
@@ -231,24 +231,24 @@ console.log(`${whoSaidThis(washQuote)} says: ${washQuote}`)
 
 // ANSWER TO NUMBER 4:
 
-// let getQuoteBatch = (name) => {
-// let information = crewMembers.indexOf(name)
-// let quoteBatch = quotes[information]
-// return quoteBatch
-// }
-//
-// let averageQuoteLength = (name)=> {
-// quoteBatch = getQuoteBatch(name)
-//
-// total = 0
-// quoteBatch.forEach((quote)=>{
-//
-// quoteLength = quote.length
-// total += quote.length
-// numberOfQuotes =  quoteBatch.length
-// })
-// return total/numberOfQuotes
-//
-// }
-//
-// console.log(averageQuoteLength('Zoe'))
+let getQuoteBatch = (name) => {
+let information = crewMembers.indexOf(name)
+let quoteBatch = quotes[information]
+return quoteBatch
+}
+
+let averageQuoteLength = (name)=> {
+quoteBatch = getQuoteBatch(name)
+
+total = 0
+quoteBatch.forEach((quote)=>{
+
+quoteLength = quote.length
+total += quote.length
+numberOfQuotes =  quoteBatch.length
+})
+return total/numberOfQuotes
+
+}
+
+console.log(averageQuoteLength('Zoe'))
