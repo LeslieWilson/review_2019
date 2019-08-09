@@ -54,22 +54,49 @@ let cargoHold = {
 //     return fuelTotal
 // }
 // console.log(consolidateFuel(fuelCanisterPile))
+//
+// let airTravelArray = [ "ship", "rocket", "satellite", "drone" ]
+// //our given array
+//
+// let isUnderFiveChar = (element) => {return element.length < 5}
+// //the function providing our criterion
+//
+// airTravelArray.find(isUnderFiveChar)
+// //.find() being called on airTravelArray with isUn
 
 
-// let hyperDrivePile = ["rusty hyperdrive", "millennium hyperdrive", "hyperdrive XL", "rusty hyperdrive", "rusty hyperdrive XL"]
-// //
-// let retrieveWorkingHyperdrive=(strings)=>{
-//     return !strings.includes("rusty")
-//     let hyperdriveStatus = cargoHold.hyperdrive
-//     let foundHyperdrive  = hyperDrivePile.find(retrieveWorkingHyperdrive)
-//     hyperdriveStatus = foundHyperdrive
-//     return hyperdriveStatus
-//     console.log(hyperdriveStatus)
+
+let hyperDrivePile = ["rusty hyperdrive", "millennium hyperdrive", "hyperdrive XL", "rusty hyperdrive", "rusty hyperdrive XL"]
+//
+// let retrieveWorkingHyperdrive = (strings)=>{return !strings.includes("rusty")
+//
+// // let setHyperdriveStatus =() =>{
+// //     setter = cargoHold.hyperdrive
+// // }
+//     //
 // }
 //
-//
-//  console.log(retrieveWorkingHyperdrive(hyperDrivePile))
+// console.log(hyperDrivePile.find(retrieveWorkingHyperdrive))
 
+
+let retrieveWorkingHyperdrive = (strings)=>{
+let finder = (strings)=>{return!strings.includes("rusty")
+}
+let NotRustyHyperdrive = hyperDrivePile.find(finder)
+ cargoHold.hyperdrive = NotRustyHyperdrive
+}
+
+
+
+
+
+// hyperdriveStatus = goodHyperdrives
+
+
+//
+//
+ console.log(retrieveWorkingHyperdrive(hyperDrivePile))
+console.log(cargoHold.hyperdrive)
 
 
 
