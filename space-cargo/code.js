@@ -77,14 +77,14 @@ let hyperDrivePile = ["rusty hyperdrive", "millennium hyperdrive", "hyperdrive X
 // }
 //
 // console.log(hyperDrivePile.find(retrieveWorkingHyperdrive))
+// THIS WORKS
 
-
-let retrieveWorkingHyperdrive = (strings)=>{
-let finder = (strings)=>{return!strings.includes("rusty")
-}
-let NotRustyHyperdrive = hyperDrivePile.find(finder)
- cargoHold.hyperdrive = NotRustyHyperdrive
-}
+// let retrieveWorkingHyperdrive = (strings)=>{
+// let finder = (strings)=>{return!strings.includes("rusty")
+// }
+// let NotRustyHyperdrive = hyperDrivePile.find(finder)
+//  cargoHold.hyperdrive = NotRustyHyperdrive
+// }
 
 
 
@@ -95,26 +95,94 @@ let NotRustyHyperdrive = hyperDrivePile.find(finder)
 
 //
 //
- console.log(retrieveWorkingHyperdrive(hyperDrivePile))
-console.log(cargoHold.hyperdrive)
+//  console.log(retrieveWorkingHyperdrive(hyperDrivePile))
+// console.log(cargoHold.hyperdrive)
 
-
-
-
+// you can get an answer with foreach looping through the array of recycleables you want and setting a result to true or false if the item you are filtering is equal to it -
 //
-// let recyclablesPile = ["paper", "space banana peel", "plastic", "plastic", "glass", "styrofoam coffee mug", "old dilithium battery", "metal can", "paper"]
+// let recyclablesPile = [ "space banana peel","paper", "plastic", "plastic", "glass", "styrofoam coffee mug", "old dilithium battery", "metal can", "paper"]
 //
-// let filterOutRecyclables = (allRecyclables)=>{
-//     let recyclablesStatus =  cargoHold.recyclables
-//     let filter = allRecyclables.includes("paper", "plastic", "glass", "metal can")
-//     recyclablesStatus = filter
-//     return recyclablesStatus
 //
+// let filterOutRecyclables = (list)=>{
+//   let filterFunction = (list)=>{
+//     list.forEach((item)=>{
+//       console.log("I'm an item")
+//       return(item)
+//     }
+//   }
 //
 // }
+// filterOutRecyclables(recyclablesPile)
 //
-//  console.log(recyclablesPile.filter(filterOutRecyclables))
+//
 
+
+// let filterOutRecyclables = (list)=>{
+//     let filterFunction = (list)=>{
+//         list.forEach((item)=>{return item.includes("plastic", "metal can")
+// debugger
+//         })
+
+//     }
+
+// }
+
+// console.log(filterOutRecyclables(recyclablesPile))
+
+
+
+
+let recyclablesPile = [ "space banana peel","paper", "plastic", "plastic", "glass", "styrofoam coffee mug", "old dilithium battery", "metal can", "paper"]
+
+let filterOutRecyclables = (allRecyclables)=>{
+let filterFunction = (allRecyclables)=>{
+    allRecyclables.forEach((recyclable)=>{return !recyclable.includes("plastic","paper","glass", "metal can")}
+    )
+}
+
+// let goodRecyclables = recyclablesPile.filter(filterFunction)
+// cargoHold.recyclables = goodRecyclables
+// console.log(goodRecyclables)
+// }
+
+ console.log(filterOutRecyclables(recyclablesPile))
+//
+// console.log(filterOutRecyclables(recyclablesPile))
+// console.log(cargoHold.recyclables)
+// //
+
+
+
+// let recyclablesPile = [ "space banana peel","paper", "plastic", "plastic", "glass", "styrofoam coffee mug", "old dilithium battery", "metal can", "paper"]
+//
+// let filterOutRecyclables = (allRecyclables)=>{
+//     allRecyclables.forEach((recyclable)=>{
+// let filterFunction = (allRecyclables)=>{return allRecyclables.includes("plastic","paper","glass", "metal can")}
+//
+// let goodRecyclables = recyclablesPile.filter(filterFunction)
+//
+// cargoHold.recyclables = goodRecyclables
+// console.log(goodRecyclables)
+//
+// })
+// }
+//  console.log(filterOutRecyclables(recyclablesPile))
+
+
+
+// let recyclablesPile = [ "space banana peel","paper", "plastic", "plastic", "glass", "styrofoam coffee mug", "old dilithium battery", "metal can", "paper"]
+//
+// let filterOutRecyclables = (allRecyclables)=>{
+// let filterFunction = (allRecyclables)=>{return allRecyclables.includes("plastic","paper","glass", "metal can")}
+// let goodRecyclables = recyclablesPile.filter(filterFunction)
+// cargoHold.recyclables = goodRecyclables
+// console.log(goodRecyclables)
+// }
+//
+//  console.log(filterOutRecyclables(recyclablesPile))
+// //
+// console.log(filterOutRecyclables(recyclablesPile))
+// console.log(cargoHold.recyclables)
 
 
 

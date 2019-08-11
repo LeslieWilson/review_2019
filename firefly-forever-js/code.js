@@ -42,68 +42,29 @@ let quotes = [
     "Not as deceiving as a low down, dirty... deceiver."
   ]
 ]
-//
-// Implement these functions to answer the questions below
 
-
-//
-// connect the crew name to the index
-// the quote batch equals whatever number information is, and then need to cycle though that and count how many strings there are
-
-// ANSWER FOR NUMBER ONE:
-let numberOfQuotes = (name) => {
-let information = crewMembers.indexOf(name)
-let quoteBatch = quotes[information]
-
-let count = 0
- quoteBatch.forEach((quote)=>{
- count += 1
-
-
- })
- return(`${name} has ${count} quotes`)
-}
-
-console.log(numberOfQuotes("Zoe"))
-
-console.log(numberOfQuotes("Mal"))
-
-
-
-//
-// let longestQuote = (name) => {
-//
-
-// }
-//
-// let averageQuoteLength = (name) => {
-//
-// }
 
 // 1. How many quotes does Mal have? Write a function called `numberOfQuotes` that takes one argument, the name of a character. This function should return the number of quotes that character has. If your function is set up properly you should be able to call `numberOfQuotes("Mal")` and `numberOfQuotes("Zoe")`, and get the Expected Output below:
 
+
+
+
+let numberOfQuotes=(name)=>{
+    let index = crewMembers.indexOf(name)
+    let length = quotes[index].length
+    return length
+
+}
 // Mal has 5 quotes.
-// console.log(`Mal has ${numberOfQuotes("Mal")} quotes.`)
+console.log(`Mal has ${numberOfQuotes("Mal")} quotes.`)
 
 // Zoe has 6 quotes.
-// console.log(`Zoe has ${numberOfQuotes("Zoe")} quotes.`)
+console.log(`Zoe has ${numberOfQuotes("Zoe")} quotes.`)
 
 
 
 
 // 2. Which character said `"I am a leaf on the wind. Watch how I soar."`? Write a function called `whoSaidThis` that takes one argument, the quote. This function should return the name of the person who said the quote. If your function is set up properly you should be able to call `whoSaidThis("I am a leaf on the wind. Watch how I soar.")` and `whoSaidThis("Let's be bad guys.")` and get the Expected Output below:
-
-
-// SUMMARY: what am I looking for?
-// the  name of the person who said a certain quote.
-//
-// ONE  search for the sentence in the quotes arrays
-// -use foreach and use a method to get the index back  on each
-//
-// TWO use crewmember[3] to grab the name and return it
-// -once the foreach loop  is done, use the number i got back from step 1 and say, crewmember name, and then [] and that would give me the name.
-
-// 3. youre going to get 'Wash' back which is already set below  in the to have the value of a quote
 
 // ANSWER FOR NUMBER 2
 
@@ -111,27 +72,11 @@ let whoSaidThis = (washQuote) => {
     quotes.forEach((quoteBatch,index)=>{
         if (quoteBatch.includes(washQuote)){
             crewIndex = index
-
-
         }
-
-
-
     })
 
 
 return crewMembers[crewIndex]
-}
-
-
-let whoSaidThis = (washQuote) => {
-    let quotesBatch.forEach((quote)=>{
-        if (quoteBatch.includes(quote)){
-
-return(`${personWhoSaid} said ${quote}`)
-}
-
-});
 }
 
 
@@ -140,7 +85,6 @@ return(`${personWhoSaid} said ${quote}`)
 
 let washQuote = "I am a leaf on the wind. Watch how I soar."
 console.log(`${whoSaidThis(washQuote)} says: ${washQuote}`)
-
 
 
 
@@ -154,30 +98,9 @@ console.log(`${whoSaidThis(jayneQuote)} says: ${jayneQuote}`)
 
 
 // 3. What is River's longest quote? Write a function called `longestQuote` that takes one argument, the name of the character. This function should return the character's longest quote. If your function is set up properly you should be able to call `longestQuote("River")` and `longestQuote("Book")` and get the Expected Output below:
-//
-// River's longest quote is: Now they see the sky and they remember what they are.
-// console.log(`Rivers's longest quote is: ${longestQuote("River")}`)
-//
-// Book's longest quote is:  A government is a body of people, usually, notably ungoverned.
-// console.log(`Book's longest quote is: ${longestQuote("Book")}`)
-
-//
-// SUMMARY: What am I looking for?
-// I need to be  getting a quote back.
-//
-//
-// ONE find their quotebatch
-// quotebatches are associated to a name by index.
-//
-// TWO find quote inside of quotebatches
-//
-// THREE find length of quote
-
 
 
 // ANSWER FOR NUMBER 3:
-
-
 
 let longestQuote = (name) => {
 let information = crewMembers.indexOf(name)
@@ -189,18 +112,6 @@ return longest
 
 }
 console.log(`Book's longest quote is: ${longestQuote("Book")}`)
-
-
-
-//  names are associated to quotebatches through index.
-//
-//  longestquote is going to return the index of a name and the matching quotebatch.
-//
-// I need to foreach through the batch, then call quote.length on the quotes inside that quotebatch
-//
-// I need to find the largeest one using a method and return it.
-//
-// that is the largest sentence.
 
 
 
