@@ -14,89 +14,60 @@ let cargoHold = {
 };
 
 
-//
-//
-// let toggleCleanedStatus =()=>{
-//     let cleaned = cargoHold.cleaned
-//
-//     if (cleaned === true){
-//     cleaned = false
-// } else{
-//     cleaned = true
-//     console.log(cleaned)
-// }
-//     return cleaned
-// }
-//
-// console.log(toggleCleanedStatus())
-//
-//
-// let addDayForIncidentReport=()=>{
-//     sum = 0
-//     let days = cargoHold.daysSinceLastIncident
-//         days += 1
-//         return days
-// }
-//
-//
-//
-// console.log(addDayForIncidentReport())
+// PART ONE ANSWER
+
+let toggleCleanedStatus =()=>{
+    let cleaned = cargoHold.cleaned
+
+    if (cleaned === true){
+    cleaned = false
+} else{
+    cleaned = true
+}
+    return cleaned
+}
+
+console.log(toggleCleanedStatus())
+
+// PART TWO ANSWER
+let addDayForIncidentReport=()=>{
+    sum = 0
+    let days = cargoHold.daysSinceLastIncident
+        days += 1
+        return days
+}
+console.log(addDayForIncidentReport())
 
 
+// PART 3 ANSWER
 
 
+let fuelCanisterPile = [2, 5, 9, 2, 3, 4, 6, 8, 8, 2, 1, 0]
+let consolidateFuel= (list)=>{
+    let fuelTotal = cargoHold.fuel
+    let totalFuelSupply = fuelCanisterPile.reduce((totalSupply, individualSupply)=>  totalSupply + individualSupply)
+        fuelTotal += totalFuelSupply
+    return fuelTotal
+}
+console.log(consolidateFuel(fuelCanisterPile))
 
-// let fuelCanisterPile = [2, 5, 9, 2, 3, 4, 6, 8, 8, 2, 1, 0]
-// let consolidateFuel= (list)=>{
-//     let fuelTotal = cargoHold.fuel
-//     let totalFuelSupply = fuelCanisterPile.reduce((totalSupply, individualSupply)=>  totalSupply + individualSupply)
-//         fuelTotal += totalFuelSupply
-//     return fuelTotal
-// }
-// console.log(consolidateFuel(fuelCanisterPile))
-//
-// let airTravelArray = [ "ship", "rocket", "satellite", "drone" ]
-// //our given array
-//
-// let isUnderFiveChar = (element) => {return element.length < 5}
-// //the function providing our criterion
-//
-// airTravelArray.find(isUnderFiveChar)
-// //.find() being called on airTravelArray with isUn
-
-
+// PART 4 ANSWER
 
 let hyperDrivePile = ["rusty hyperdrive", "millennium hyperdrive", "hyperdrive XL", "rusty hyperdrive", "rusty hyperdrive XL"]
-//
-// let retrieveWorkingHyperdrive = (strings)=>{return !strings.includes("rusty")
-//
-// // let setHyperdriveStatus =() =>{
-// //     setter = cargoHold.hyperdrive
-// // }
-//     //
-// }
-//
-// console.log(hyperDrivePile.find(retrieveWorkingHyperdrive))
-// THIS WORKS
-
-// let retrieveWorkingHyperdrive = (strings)=>{
-// let finder = (strings)=>{return!strings.includes("rusty")
-// }
-// let NotRustyHyperdrive = hyperDrivePile.find(finder)
-//  cargoHold.hyperdrive = NotRustyHyperdrive
-// }
 
 
+let retrieveWorkingHyperdrive = (strings)=>{
+let finder = (strings)=>{return!strings.includes("rusty")
+}
+let NotRustyHyperdrive = hyperDrivePile.find(finder)
+ cargoHold.hyperdrive = NotRustyHyperdrive
+ return NotRustyHyperdrive
+}
+
+ console.log(retrieveWorkingHyperdrive(hyperDrivePile))
+console.log(cargoHold.hyperdrive)
 
 
-
-// hyperdriveStatus = goodHyperdrives
-
-
-//
-//
-//  console.log(retrieveWorkingHyperdrive(hyperDrivePile))
-// console.log(cargoHold.hyperdrive)
 
 // you can get an answer with foreach looping through the array of recycleables you want and setting a result to true or false if the item you are filtering is equal to it -
 //
@@ -129,23 +100,23 @@ let hyperDrivePile = ["rusty hyperdrive", "millennium hyperdrive", "hyperdrive X
 
 // console.log(filterOutRecyclables(recyclablesPile))
 
-
-
-
-let recyclablesPile = [ "space banana peel","paper", "plastic", "plastic", "glass", "styrofoam coffee mug", "old dilithium battery", "metal can", "paper"]
-
-let filterOutRecyclables = (allRecyclables)=>{
-let filterFunction = (allRecyclables)=>{
-    allRecyclables.forEach((recyclable)=>{return !recyclable.includes("plastic","paper","glass", "metal can")}
-    )
-}
+// THIS
+//
+//
+// let recyclablesPile = [ "space banana peel","paper", "plastic", "plastic", "glass", "styrofoam coffee mug", "old dilithium battery", "metal can", "paper"]
+//
+// let filterOutRecyclables = (allRecyclables)=>{
+// let filterFunction = (allRecyclables)=>{
+//     allRecyclables.forEach((recyclable)=>{return !recyclable.includes("plastic","paper","glass", "metal can")}
+//     )
+// }
 
 // let goodRecyclables = recyclablesPile.filter(filterFunction)
 // cargoHold.recyclables = goodRecyclables
 // console.log(goodRecyclables)
 // }
 
- console.log(filterOutRecyclables(recyclablesPile))
+ // console.log(filterOutRecyclables(recyclablesPile))
 //
 // console.log(filterOutRecyclables(recyclablesPile))
 // console.log(cargoHold.recyclables)
