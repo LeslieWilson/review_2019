@@ -100,12 +100,20 @@ console.log('\n7) ' +  newDescriptionsArray(data))
 
 //8)
 let keyInfo = (array) => {
+    let mappedData = data.map((repo)=>{
+        let name = repo.name
+        let owner = repo.owner
+        let watchers = repo.watchers_count
+        return (`The name of this repository is ${name}, the owner is ${owner}, and there are ${watchers} watchers of this repository.`)
+    })
+    return mappedData
 
 }
-console.log('\n8) ' +  keyInfo(data))
+console.log (keyInfo(data))
 
 //9)
 let monkeyKeys = (array) => {
+
 
 }
 console.log('\n9) ' + monkeyKeys(data))
