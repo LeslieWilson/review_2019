@@ -33,6 +33,6 @@ You should NOT change the code given, only complete the function bodies.
 5. Which repo has the largest number of stargazers? Your `maxGazers` function must return a string.
 6. Return the names of the repos that have a description that is not null. Your `hasDescriptions` function must return an array of strings.
 7. Use `.map` to create an array of repository descriptions. Your `newDescriptionsArray` must return an array of strings.
-8. Use `.map` once again to create a summary of each repository's most important information. We want to know the **name** of the repository, who created it (the **owner**), and **how many watchers** there are. The resultant array should once again be an array of strings.
+8. Use `.map` once again to create a summary of each repository's most important information. We want to know the **name** of the repository, who cfor reated it (the **owner**), and **how many watchers** there are. The resultant array should once again be an array of strings.
 9. Return a string containing the 2 keys inside `monkey_party`'s license object.
 10. What is `monkey_party`'s license url? Your return should be a string.

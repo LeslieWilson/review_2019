@@ -113,8 +113,12 @@ console.log (keyInfo(data))
 
 //9)
 let monkeyKeys = (array) => {
-
-
+data.forEach((repo)=>{
+    name = repo.name
+    if (name == "monkey_party"){
+        console.log(repo.liscense)
+    }
+})
 }
 console.log('\n9) ' + monkeyKeys(data))
 
