@@ -109,23 +109,55 @@ let keyInfo = (array) => {
     return mappedData
 
 }
-console.log (keyInfo(data))
+console.log ('\n8) ' + keyInfo(data))
 
 //9)
-let monkeyKeys = (array) => {
-data.forEach((repo)=>{
-    name = repo.name
-    if (name == "monkey_party"){
-        console.log(repo.liscense)
-    }
-})
+
+let monkeyKeys = (array)=>{
+    let name = ""
+    let license = ""
+    data.forEach((repo)=>{
+        if(repo.name == "monkey_party"){
+         name = repo.license
+         keys = Object.keys(name)
+         }
+
+
+
+
+        })
+
+    return (`${keys}`)
+
 }
+
+
+
+
+
 console.log('\n9) ' + monkeyKeys(data))
 
 //10)
 let urlValue = (array) => {
 
-}
+
+    let license = ""
+    data.forEach((repo)=>{
+        if(repo.name == "monkey_party"){
+
+         license = repo.license.url}
+
+
+
+
+        })
+
+    return (`url is ${license}`)
+
+    }
+
+
+
 console.log('\n10) ' + urlValue(data))
 
 module.exports = { numOfRepos, largestRepo, mostRecentRepo, noGazers, maxGazers, hasDescriptions, newDescriptionsArray, keyInfo, monkeyKeys, urlValue }
