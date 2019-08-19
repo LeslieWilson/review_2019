@@ -49,6 +49,8 @@ puts ave
 
 sumhousehold = 0
 householdcount = 0
+
+
 array.each do |x|
     householdsize = x[:Household_Size]
     sumhousehold += householdsize
@@ -57,3 +59,18 @@ end
 
 avghousehold = sumhousehold/householdcount
 puts avghousehold.to_f
+
+sumAllGenders = 0
+sumFemales = 0
+avgFemales = sumAllGenders.to_f / sumFemales.to_f
+array.each do |x|
+    genders = x[:Gender]
+    sumAllGenders += 1
+        if genders == "Female"
+            sumFemales += 1
+
+    end
+
+end
+
+puts "you have #{ sumFemales/ sumAllGenders.to_f * 100}% females"
