@@ -33,7 +33,7 @@ array.each do |x|
         sum += age.to_i
         agecount += 1
     end
-    avg = sum /agecount
+    avg = sum /agecount.to_f
     puts avg
 
 sum = 0
@@ -43,7 +43,7 @@ array.each do |x|
     sum += income
     incomeCount += 1
 end
-ave = sum/incomeCount
+ave = sum/incomeCount.to_f
 puts ave
 
 
@@ -56,21 +56,79 @@ array.each do |x|
     sumhousehold += householdsize
     householdcount += 1
 end
-
-avghousehold = sumhousehold/householdcount
+avghousehold = sumhousehold/householdcount.to_f
 puts avghousehold.to_f
+
 
 sumAllGenders = 0
 sumFemales = 0
-avgFemales = sumAllGenders.to_f / sumFemales.to_f
 array.each do |x|
     genders = x[:Gender]
     sumAllGenders += 1
         if genders == "Female"
             sumFemales += 1
-
     end
+end
+puts "you have #{ sumFemales/ sumAllGenders.to_f * 100}% females"
 
+
+sumAllGenders = 0
+sumMales = 0
+array.each do |x|
+    genders= x[:Gender]
+sumAllGenders +=1
+if genders == "Male"
+    sumMales += 1
+    end
 end
 
-puts "you have #{ sumFemales/ sumAllGenders.to_f * 100}% females"
+puts "you have #{sumMales/sumAllGenders.to_f * 100}% males"
+
+
+sumAllGenders = 0
+sumUnspec = 0
+array.each do |x|
+    genders = x[:Gender]
+    sumAllGenders += 1
+    if genders == "Unspecified"
+        sumUnspec += 1
+    end
+end
+puts "you have #{sumUnspec/sumAllGenders.to_f * 100 }% unspecified"
+
+
+sumAllSchoolLevel= 0
+sumCollegeLevel = 0
+array.each do |x|
+    schoolLevel = x[:Education]
+    sumAllSchoolLevel += 1
+    if schoolLevel =="College"
+        sumCollegeLevel += 1
+    end
+end
+puts"you have #{sumCollegeLevel/sumAllSchoolLevel.to_f * 100} % of people who went to college"
+
+
+sumAllSchoolLevel = 0
+sumAllHighschool = 0
+array.each do |x|
+    schoolLevel = x[:Education]
+    sumAllSchoolLevel += 1
+    if schoolLevel =="High School"
+        sumAllHighschool += 1
+    end
+end
+
+puts "you have #{sumAllHighschool/sumAllSchoolLevel.to_f * 100}% of people who went to highschool"
+
+sunAllSchoolLevel = 0
+sumUnfinishedSchool = 0
+array.each do |x|
+    schoolLevel = x[:Education]
+    sumAllSchoolLevel += 1
+    if schoolLevel ==  "Did Not Complete High School"
+        sumUnfinishedSchool += 1
+    end
+end
+
+puts "you have #{sumUnfinishedSchool/sumAllSchoolLevel.to_f * 100}% of people who did not complete highschool"
