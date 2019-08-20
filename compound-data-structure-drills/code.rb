@@ -1,3 +1,6 @@
+
+
+
 people =
 {
   "Alia O'Conner PhD" => {
@@ -47,15 +50,36 @@ people =
 puts people.length
 # * What are the names of all the people?
 
-puts people[1]
+puts people.keys
 # * What is the phone number of Alia O'Conner PhD?
+puts people["Alia O'Conner PhD"]["phone"]
 # * How many children does Brian Heller have?
+puts people["Brian Heller"]["children"].length
+
 # * What company does Dr. Adela DuBuque work for?
+puts people["Dr. Adela DuBuque"]["company"]
 # * What are the names of the people who have children?
+
+people.each do |key, value|
+    if value["children"]
+        puts key
+end
+end
 # * What are the names of the people who do not have children?
+
+people.each do |key, value|
+    if !value["children"]
+        puts key
+    end
+end
 # * What is Brian Heller's child's name?
+puts people["Brian Heller"]["children"]
 # * What is Maryse Johns' first child's name?
+puts people["Maryse Johns"]["children"][0]
 # * Dr. Adela DuBuque just had a baby named Tomas. How would you update the hash for this information?
+
+people["Dr. Adela DuBuque"]["children"]= ["Tomas"]
+puts people["Dr. Adela DuBuque"]["children"]
 
 sets_of_people =
 [
@@ -117,9 +141,21 @@ sets_of_people =
 # Write Ruby code to find out the answers to the following questions:
 
 # * How many people are in the first set of people?
+puts sets_of_people[0].length
 # * How many people are in the second set of people?
+puts sets_of_people[1].length
 # * What is Ruby Hessel's phone number?
+puts sets_of_people[0]["Ruby Hessel"]["phone"]
 # * What are the names of Dr. Sigrid Nader's children?
+puts sets_of_people[1]["Dr. Sigrid Nader"]["children"]
 # * What is Bernard Feil's child's name?
+puts sets_of_people[0]["Bernard Feil"]["children"]
 # * What company does Casandra Kemmer work for?
+puts sets_of_people[0]["Casandra Kemmer"]["company"]
 # * Who are all the people in the first set that have an `m` in their Company names?
+
+sets_of_people[0].each do |key,value|
+    if value["company"].include?("m")
+        puts key
+    end
+end
