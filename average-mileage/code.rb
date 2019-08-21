@@ -14,8 +14,10 @@ end
 #     {name:"The Nanoship",milage:[646, 883, 761, 932, 778]}
 # }
 
+shipmilageList = [260, 483, 792, 357, 546]
 
-puts average([260, 483, 792, 357, 546])
+shipAverage = average(shipmilageList)
+puts shipAverage
 
 
 
@@ -34,4 +36,5 @@ def milage_rating(average)
 end
 
 
-shipMilageaRating  = milage_rating(average)
+shipMilageaRating  = milage_rating(shipAverage)
+puts shipMilageaRating
