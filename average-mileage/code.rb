@@ -5,16 +5,20 @@ def average(tripMileage)
         sum += mileage
         number += 1
     end
-    puts" #{sum / number.to_f}  is your  average mileage"
+    average = sum/number
+    return average
 
 end
-#     ships = {
-#     {name:"The Shuvver Ship", milage:[260, 483, 792, 357, 546]},
-#     {name:"The Zhook Cruiser", milage:[186, 223, 173, 297, 303]},
-#     {name:"The Nanoship",milage:[646, 883, 761, 932, 778]}
-# }
+
+    ships = {
+    {name:"The Shuvver Ship", milage:[260, 483, 792, 357, 546]},
+    {name:"The Zhook Cruiser", milage:[186, 223, 173, 297, 303]},
+    {name:"The Nanoship",milage:[646, 883, 761, 932, 778]},
+}
 
 shipmilageList = [260, 483, 792, 357, 546]
+
+puts " #{average(shipmilageList)}  is your  average mileage"
 
 shipAverage = average(shipmilageList)
 puts shipAverage
@@ -28,7 +32,7 @@ def milage_rating(average)
         puts  "B rating"
     elsif average >=500 && average  <750
         puts "C rating"
-    elseif average  >= 250 & average <500
+    elsif average  >= 250 && average <500
         puts "D rating"
     else
         puts "you get an F"
@@ -38,3 +42,12 @@ end
 
 shipMilageaRating  = milage_rating(shipAverage)
 puts shipMilageaRating
+
+
+def rankings(ships)
+    ships.each_with_index do |ship, index|
+        puts "#{index + 1}.#{ship}"
+    end
+end
+
+rankings(['Nanoship', 'Shuvver', 'Snacky Cabs', 'Resisty\'s Ship', 'Zhook Cruiser'])

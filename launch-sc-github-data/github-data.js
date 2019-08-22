@@ -103,7 +103,7 @@ let keyInfo = (array) => {
     let owner = data.owner
     let mappedData = data.map((repo)=>{
         let name = repo.name
-        let owner  = repo.owner
+        let owner  = repo.owner.login
         let watchers = repo.watchers_count
         return (`The name of this repository is ${name}, the owner is ${owner}, and there are ${watchers} watchers of this repository.`)
     })
