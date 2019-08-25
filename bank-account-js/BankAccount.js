@@ -4,15 +4,19 @@ class BankAccount{
         this.transactionList = []
     }
 
-    addATransaction(number){
-        this.transactionList.push(number)
+    addATransaction(array){
+
+        this.transactionList  = this.transactionList.concat(array)
+
     }
 
     currentBalance(){
+
+        let balance =  this.initialBalance
         this.transactionList.forEach(function(transaction){
-        this.initialBalance += transaction
+        balance += transaction
     })
-        return (this.initialBalance)
+        return (balance)
     }
 }
 
@@ -26,4 +30,5 @@ let initialBalance = 1000
 let bills = [-45, -99.95, -34.43]
 
 newAccount = new BankAccount(initialBalance)
+newAccount.addATransaction(bills)
 console.log(newAccount.currentBalance())
