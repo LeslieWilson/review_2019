@@ -1,0 +1,74 @@
+.introtop{
+
+}
+
+.title {
+    color:red;
+    font-weight:bold;
+    font-size:60px;
+    text-align: center;
+    font-family: fantasy;
+
+}
+img{
+    float:right;
+    margin-top:75px;
+padding-left:120px;
+padding-right:20px;
+
+
+}
+
+
+.paddingleft{
+    padding-left:20px;
+}
+.number{
+margin-left:300px;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.email{
+    margin-left:300px;
+    text-align:center;
+}
+
+
+.education{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.eduinfodart{
+    margin-bottom:5px;
+}
+
+.edu{
+margin-bottom:20px;
+}
+
+.publication{
+    font-size:12px
+}
+
+.work{
+    font-size:20px;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.compsci{
+    font-weight:bold;
+
+
+}
+
+.bullets{
+    margin-bottom:30px;
+    font-family:monospace,sans-serif,helvetica;
+}
+/*.companyital{
+    margin-top:5px;
+    font-size:12px;
+}*/
