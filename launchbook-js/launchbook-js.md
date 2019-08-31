@@ -133,6 +133,7 @@ Example: Add the `.active` class to the 'Events' link in the left favorites side
 ```javascript
 let favorites = document.getElementsByClassName('favorites')[0];
 let eventsLink = favorites.getElementsByTagName('li')[2];
+
 eventsLink.className = eventsLink.className + ' active'
 ```
 
