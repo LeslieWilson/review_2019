@@ -19,7 +19,7 @@ describe Container do
 
     it 'should not have a writer for weight' do
       expect{ container.weight = 5 }.to raise_error(NoMethodError)
-    end
+    e
   end
 
   describe '#maximum_holding_weight' do
