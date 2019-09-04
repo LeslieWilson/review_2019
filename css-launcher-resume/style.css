@@ -3,7 +3,7 @@
 }
 
 .title {
-    color:red;
+    color:blue;
     font-weight:bold;
     font-size:60px;
     text-align: center;
@@ -13,24 +13,29 @@
 img{
     float:right;
     margin-top:75px;
-padding-left:120px;
+padding-left:20px;
 padding-right:20px;
+border-radius: 40px;
 
 
 }
 
-
+.linksss{
+    text-align:center;
+    margin-top:-15px;
+    margin-bottom:5px;
+}
 .paddingleft{
     padding-left:20px;
 }
 .number{
-margin-left:300px;
+margin-left:220px;
     text-align:center;
     margin-bottom:30px;
 }
 
 .email{
-    margin-left:300px;
+    margin-left:220px;
     text-align:center;
 }
 
@@ -64,10 +69,57 @@ margin-bottom:20px;
 
 }
 
+
+}
 .bullets{
     margin-bottom:30px;
     font-family:monospace,sans-serif,helvetica;
 }
+
+.listOfProj{
+
+    width:500px;
+    border:3px solid black;
+    height:300px;
+
+}
+
+.projlist{
+
+font-size:20px;
+visibility:hidden;
+}
+
+.visible{
+
+font-size:20px;
+}
+
+.quoteslist{
+    font-size:20px;
+    text-decoration: underline;
+
+}
+
+
+.blah{
+    visibility:hidden;
+}
+
+.button1{
+    width:60px;
+    height:40px;
+}
+
+.button2{
+    width:60px;
+    height:40px;
+}
+
+.all{
+    background-color:pink;
+}
+
 /*.companyital{
     margin-top:5px;
     font-size:12px;
