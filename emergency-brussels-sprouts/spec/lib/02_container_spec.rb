@@ -19,7 +19,8 @@ describe Container do
 
     it 'should not have a writer for weight' do
       expect{ container.weight = 5 }.to raise_error(NoMethodError)
-    e
+
+  end
   end
 
   describe '#maximum_holding_weight' do
@@ -63,12 +64,11 @@ describe Container do
         expect(cheesy_poof_container.maximum_holding_weight).to eq(20)
       end
     end
-  end
+end
 
   describe '#which_ingredient' do
     it 'should return what type of ingredient the container has' do
       container.fill_with_ingredient(ingredient)
-
       expect(container.which_ingredient).to eq("Brussels Sprouts")
     end
   end
@@ -94,10 +94,10 @@ describe Container do
   describe '#empty' do
     it 'should empty the container completely' do
       container.fill_with_ingredient(ingredient)
-
       container.empty
-
       expect(container.how_many_ingredients).to eq(0)
+
     end
   end
-end
+
+  end
