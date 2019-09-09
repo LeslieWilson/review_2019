@@ -1,0 +1,11 @@
+
+
+<ul>
+<%@creatures.each do |creature| %>
+            <li>
+        <a href="/creatures/<%= creature[:name] %>"><%= creature[:name] %></a>
+    </li>
+    <%end%>
+
+
+</ul>
