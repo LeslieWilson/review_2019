@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Veggie Recipe Printer</title>
+  <link rel ='stylesheet' href="home.css"
+</head>
+
+<body>
+    <h1>ingredients</h1>
+    <ul>
+        <%@ingredients.each do |ingredient| %>
+        <li><%=ingredient%></li>
+    <%end%>
+ </ul>
+
+ <ol>
+        <%@directions.each do |direction| %>
+        <li><%=direction%></li>
+        <%end%>
+    </ol>
+
+
+    <h1>REVIEWS</h1>
+<ul>
+        <%@reviews.each do |review| %>
+            <li><%= "#{review[:username]}"%></li>
+            <%end%>
+
+</ul>
+
+</body>
+</html>

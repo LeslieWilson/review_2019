@@ -1,0 +1,17 @@
+body{
+    background-color:purple;
+    color: #00ff00;
+    font-family:monospace;
+    font-size:1.5em;
+
+}
+
+ul {
+    width:300px;
+    border:1px solid #00ff00;
+
+}
+
+li{
+    padding:5px;
+}
