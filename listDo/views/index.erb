@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Basic HTML Page</title>
-        <link rel ="stylesheet" href="home.css"
-    </head>
+  <head>
+    <title>Basic HTML Page</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
 
-<body>
-    <h1>todolist</h1>
+  <body>
+    <h1>TODO list</h1>
+
     <ul>
-        <%@tasks.each do |task| %>
-        <li><%=task%></li>
-        <%end%>
-    </ul>
+      <% @tasks.each do |task| %>
+        <li><%= task %></li>
+      <% end %>
+      <ul>
+    <form action = "/tasks" method = "post">
+        <label for = "task_name">New Task:</label>
+        <input type= "text" id= "task_name" name= "task_name">
+        <input type= "submit">
 
-    
+    </form>
 </body>
 </html>
