@@ -22,13 +22,13 @@ require 'spec_helper'
 
     # If I click on the URL it should take me to the relevant page inside of a new tab.
         scenario 'url takes me to new page' do
-            visit '/articles'
+            vissiit '/articles'
             click_link 'cats article'
             expect(page).to have_current_path("cats/newcat")
             expect(page).to have_content('cats are awesome right')
 
         end
 
-        
+
 
         end

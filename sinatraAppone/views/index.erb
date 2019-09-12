@@ -1,7 +1,17 @@
-<h1>helllo</h1>
+<h1>Article Reader</h1>
+
+<h4 class = 'new'><a href="/articles/new">Add A New Article</a></h4>
 
 <ul>
       <% @articles.each do |article| %>
-        <li><%= article %></li>
+
+        <li>
+
+        <%= "Title: " + article[0] + "." %>
+        <%= "Description:" + article[1]+ "." %>
+        <%= "URL:" + article[2]+ "." %>
+    
+    </li>
+
       <% end %>
     </ul>
