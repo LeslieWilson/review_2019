@@ -1,11 +1,25 @@
 <h1> Add New Article!!</h1>
 
-<form action = "/articles" method= "POST"> <label for="article_name"> Article Name:</label>
-    <input type= "text" id = "article"
-    name = "article">
-    <input type= "submit">Add Article</input>
+<% if @error %>
+<%= @error %>
+<% end %>
+
+<form action = "/articles/new" method= "POST"> <label for="article_title"> Article Title:</label>
+    <input type= "text" id = "article_title"
+    name = "article_title" value="<%= @title %>">
+
+<label for = "article_url">Article URL:</label>
+    <input type="text" name = "article_url" id = "article_url" value = "<%= @url%>">
+
+    <label for= "article_description">Article Description:</label>
+    <input type = "text" name="article_description" id="article_description" value="<%= @description %>">
+
+    <input type= "submit"></input>
+
 </form>
 
-<a class="back" href="/articles">Back To My Articles!!!</a>
+
+<!--
+<a class="back" href="/articles">Back To My Articles!!!</a> -->
   </body>
 </html>
