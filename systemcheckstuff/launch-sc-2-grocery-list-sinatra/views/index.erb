@@ -1,0 +1,28 @@
+
+<h1>Groceries</h1>
+
+<% if @error %>
+    <%= @error %>
+<% end %>
+
+    <ul>
+        <%if @groceries%>
+        <% @groceries.each do |name| %>
+        <li>
+            <a href="/groceries/<%=name[0]%>"><%= name[0] %></a>
+        </li>
+          <% end %>
+        <%end%>
+
+    <ul>
+        <form action = "/groceries/" method= "POST">      <label for="name"> Food Name:</label>
+            <input type= "text" id = "name"
+            name = "name" >
+            <input type= "submit" value = "Add"></input>
+        </form>
+
+        <form action = "/groceries/new" method= "POST">      <label for="name"> Food Quantity:</label>
+            <input type= "text" id = "quantity"
+            name = "quantity" >
+            <input type= "submit" value = "Add"></input>
+        </form>

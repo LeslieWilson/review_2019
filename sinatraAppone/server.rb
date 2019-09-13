@@ -59,7 +59,7 @@ if @title == "" || @url==""||@description == ""
 else
 
     CSV.open("articles.csv", "a") do |csv|
-        csv << [title,url,description]
+        csv << [@title,@url,@description]
     end
     redirect "/articles"
 end
