@@ -7,7 +7,7 @@ const Icon = props =>{
 
     return(
         <li onClick={descriptionAlert}>
-        <i className ={iconClass} /> ={iconName}
+        <i className ={iconClass} /> {iconName}
         </li>
     )
 }

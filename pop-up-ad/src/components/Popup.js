@@ -45,7 +45,7 @@ let timesIcon = (
     <div>
     {timesIcon}
     {form}
-    <h1>laksdjhf</h1>
+    <h1>laksdjf</h1>
     </div>
 
 

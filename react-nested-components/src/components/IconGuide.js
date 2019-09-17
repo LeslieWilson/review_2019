@@ -7,7 +7,7 @@ const IconGuide = props =>{
         <div>
         <h2>Launch Acadmy Icon Guide</h2>
         <p>
-        here ae the symbols
+        here r the symbols
         </p>
         <IconReferenceList />
         </div>
