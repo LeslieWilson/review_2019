@@ -1,26 +1,16 @@
 import React from 'react';
+import GroceryReferenceList from  "./GroceryReferenceList"
 
-const App = props => {
-  return(
-    <div>
-      <h1>Grocery List</h1>
 
-      <ul>
-        <li>
-          Oranges
-          <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-        </li>
-        <li>
-          Bananas
-          <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-        </li>
-        <li>
-          Bread
-          <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-        </li>
-      </ul>
-    </div>
-  );
-};
-
+const App = props =>{
+    return(
+        <div>
+        <h2>Launch Acadmy Icon Guide</h2>
+        <p>
+        here r the symbols
+        </p>
+        <GroceryReferenceList />
+        </div>
+    )
+}
 export default App;
