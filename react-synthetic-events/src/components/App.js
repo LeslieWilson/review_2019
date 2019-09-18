@@ -4,10 +4,19 @@ import KarmaButton from './KarmaButton';
 
 const App = (props) => {
 
+let formChanger = event =>{
+    event.preventDefault()
+    console.log('form submitted!!!')
+}
+
+let karmaAlert  = event =>{
+    alert('youve leveled up')
+}
+
   return (
     <div className="main-div">
-      <NameForm />
-      <KarmaButton />
+      <NameForm formChangerProp={formChanger}/>
+      <KarmaButton karmaAlertProp={karmaAlert} />
     </div>
   );
 }
