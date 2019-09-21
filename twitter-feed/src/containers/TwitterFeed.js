@@ -2,7 +2,6 @@ import React from 'React';
 import Tweet from "../components/Tweet"
 
 const TwitterFeed = (props) => {
-
     let information = props.data.map(tweet =>{
         return(
             <Tweet

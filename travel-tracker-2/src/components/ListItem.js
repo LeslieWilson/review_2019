@@ -7,13 +7,13 @@ const ListItem = props =>{
         countryClassName = "hidden"
     }
 
-        return(
+    return(
 
-            <div className = 'whatever'>
-            <p onClick = {props.changeStrikeThrough} className={countryClassName}>{props.name}</p>
+        <div className = 'whatever'>
+        <p onClick = {props.changeStrikeThrough} className={countryClassName}>{props.name}</p>
 
-            </div>
-        )
+        </div>
+    )
 
 }
 
