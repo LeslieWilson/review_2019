@@ -1,32 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-const ReservationForm  = props =>{
+const ReservationForm = props =>{
     const[firstName, setFirstName] = useState("")
 
-    const handleFirstNameChange = event =>{
+    const handleFirstNameChange = event => {
         event.preventDefault()
         setFirstName(event.currentTarget.value)
     }
 
-    const handleSubmit = event =>{
+    const handleSubmit = event => {
         event.preventDefault()
+
         props.onNameSubmitted(firstName)
-        setFirstName('')
+        setFirstName("")
     }
 
     return(
         <form onSubmit={handleSubmit}>
         <div>
-        <label htmlFor = "first_name"> your first  Name</label>
+        <label htmlFor="first_name"> your name  </label>
         <input
-        id = "first_name"
+        id ="first_name"
         type = "text"
         value = {firstName}
         onChange = {handleFirstNameChange}
         />
-        <input type = "submit" value = "RSPV"  className = 'btn' />
+        <input type = "submit" value= "RSVP" className="btn" />
         </div>
         </form>
+
     )
 }
 
