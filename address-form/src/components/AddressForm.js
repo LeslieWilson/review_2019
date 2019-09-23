@@ -1,17 +1,39 @@
 import React, { useState } from "react"
 
 const AddressForm = props => {
-const[firstName, setFirstName] =  useState("")
+const[inputFields, setInputFields] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    phoneNumber: "",
+    address: ""
+})
 
-const handleFirstNameChange = event =>{
-    event.preventDefault()
-    setFirstName(event.currentTarget.value)
-
+const handleChange = event =>{
+    setInputFields({
+        ...inputFields,
+        [event.currentTarget.id]: event.currentTarget.value
+    })
+console.log(inputFields)
     }
 
     const handleSubmit = event =>{
         event.preventDefault()
-        console.log(firstName)
+        console.log(inputFields)
+        setInputFields({
+            ...inputFields,
+            firstName: "",
+            lastName: "",
+            email: "",
+            city: "",
+            state: "",
+            zipCode: "",
+            phoneNumber: "",
+            address: ""
+        })
 
     }
 
@@ -26,8 +48,8 @@ const handleFirstNameChange = event =>{
         <input type="text"
         id="firstName"
         name="firstName"
-        value = {firstName}
-        onChange = {handleFirstNameChange}
+        value  = {inputFields.firstName}
+        onChange = {handleChange}
         />
       </div>
 
@@ -36,35 +58,66 @@ const handleFirstNameChange = event =>{
         <input type="text"
         id="lastName"
         name="lastName"
+        value = {inputFields.lastName}
+        onChange ={handleChange}
         />
       </div>
 
       <label htmlFor="address">Address:</label>
-      <input type="text" id="address" name="address" />
+      <input type="text"
+      id="address"
+      name="address"
+      value = {inputFields.address}
+      onChange = {handleChange}/>
 
       <div>
         <label htmlFor="city">City:</label>
-        <input type="text" id="city" name="city" />
+        <input type="text"
+        id="city"
+        name="city"
+        value=  {inputFields.city}
+        onChange = {handleChange}
+        />
       </div>
 
       <div>
         <label htmlFor="state">State:</label>
-        <input type="text" id="state" name="state" />
+        <input type="text"
+        id="state"
+        name="state"
+        value = {inputFields.state}
+        onChange = {handleChange}
+        />
       </div>
 
       <div>
         <label htmlFor="zipCode">Zip Code:</label>
-        <input type="text" id="zipCode" name="zipCode" />
+        <input type="text"
+        id="zipCode"
+        name="zipCode"
+        value= {inputFields.zipCode}
+        onChange= {handleChange}
+        />
       </div>
 
       <div>
         <label htmlFor="phoneNumber">Phone Number:</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" />
+        <input type="text"
+        id="phoneNumber"
+        name="phoneNumber"
+        value = {inputFields.phoneNumber}
+        onChange= {handleChange}
+        />
       </div>
 
       <div>
         <label htmlFor="email">Email:</label>
-        <input type="text" id="email" name="email" />
+        <input type="text"
+        id="email"
+        name="email"
+        value = {inputFields.email}
+        onChange = {handleChange}
+        />
       </div>
 
       <input type="submit" className="button" value="Submit " />
