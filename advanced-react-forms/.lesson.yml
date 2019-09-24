@@ -1,0 +1,9 @@
+---
+title: "Advanced React Forms"
+type: "article"
+description: "Learn how to implement forms in React using controlled components."
+behaviors:
+  - react_on_node
+tags: "react, controlled components"
+ignore:
+- "advanced-react-forms.md"

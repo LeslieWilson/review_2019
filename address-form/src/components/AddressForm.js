@@ -22,7 +22,8 @@ console.log(inputFields)
 
     const handleSubmit = event =>{
         event.preventDefault()
-        console.log(inputFields)
+
+        props.onItemSubmitted(inputFields)
         setInputFields({
             ...inputFields,
             firstName: "",
@@ -36,6 +37,9 @@ console.log(inputFields)
         })
 
     }
+
+
+
 
   return (
     <form className="callout"
