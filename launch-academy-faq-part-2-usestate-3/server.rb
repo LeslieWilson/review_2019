@@ -50,16 +50,12 @@ get "/api/v1/questions" do
 
   content_type :json
   json questions
-  # is questions sending the questions and answers along with the  fetch call here?
 end
-
-
 
 post "/api/v1/questions" do
   current_questions = read_questions
 
   question = JSON.parse(request.body.read)
-  # what is this
   question["id"] = current_questions.last["id"] + 1
 
   current_questions << question
@@ -74,6 +70,3 @@ end
 get "*" do
   erb :home
 end
-
-
-how to best  figure out how many fields you need? what to look  for in data.

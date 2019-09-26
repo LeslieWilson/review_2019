@@ -1,5 +1,5 @@
-info = {
-     {
+[
+  {
     "id": 1,
     "question": "What is Launch Academy?",
     "answer": "Launch Academy is a 10-week, immersive bootcamp taking eager learners with little to no coding experience and giving them the tools to add value as a junior contributor to a software engineering team"
@@ -23,5 +23,10 @@ info = {
     "id": 5,
     "question": "Why should I learn to program?",
     "answer": "Even non-technical jobs are beginning to require basic programming knowledge. Knowing how to write and think in code is quickly becoming one of the most essential skills in the job market. But the rewards of learning to program go deeper than just getting a better job. Code has innumerable touchpoints in your daily life, and understanding the underlying logic of the programmable world around you means you’ll have a deeper understanding of the everyday magic found in modern life."
+  },
+  {
+    "question": "the ",
+    "answer": "person",
+    "id": 6
   }
-  }
+]

@@ -43,7 +43,7 @@ const App = (props) => {
           let booksList = body.books;
           setBooks(booksList);
       })
-      .catch(error => console.error(`error in fetch: ${error.message}`), [])iuz
+      .catch(error => console.error(`error in fetch: ${error.message}`), [])
 
   })
 
