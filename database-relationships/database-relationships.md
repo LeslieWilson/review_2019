@@ -462,11 +462,7 @@ To model this in our schema we would use the same references key word for both
 columns.
 
 ```SQL
-CREATE TABLE cast_members(
-  movie_id INT REFERENCES movies(id),
-  actor_id INT REFERENCES actors(id)
-);
-```
+SEL
 
 You might notice we lost a bit of information in the translation. Since
 our actors table only contains one row per actor we had to drop the name of the
