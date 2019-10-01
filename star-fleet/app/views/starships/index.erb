@@ -1,0 +1,19 @@
+<h1>Ships</h1>
+
+
+<ul>
+
+    <% @starships.each do |starship| %>
+      <li>
+          <a href="/starships/<%=starship.id%>">
+        <%= starship.name %>
+      </li>
+
+
+  <% end %>
+</ul>
+<ul>
+
+    <a href="/starships/new">Make new Starship</a>
+
+</ul>

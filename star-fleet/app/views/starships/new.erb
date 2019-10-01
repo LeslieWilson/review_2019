@@ -1,0 +1,28 @@
+<h1>helloo</h1>
+<p> <%=@error%><p>
+
+<form action="/starships/new" method="post">
+
+    <label for="name">Name:</label>
+    <input
+    type = "text"
+    name="name"
+    id="name"
+    value="<%= @name %>">
+
+    <label for="location">Location:</label>
+    <input
+    type = "text"
+    name="location"
+    id="location"
+    value="<%= @location %>">
+
+    <label for="ship_class">Ship Class:</label>
+    <input
+    type = "text"
+    name="ship_class"
+    id="ship_class"
+    value="<%= @ship_class %>">
+
+<input type = "submit" values="submit">
+</form
