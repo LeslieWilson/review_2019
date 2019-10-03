@@ -1,3 +1,31 @@
 <h1><%=@congrats %></h1>
 <h1><%=@starship.name %></h1>
 <a href="/">Home</a>
+
+<p> <%=@error%><p>
+
+<form action="/starships/<%=@starship.id%>" method="post">
+
+    <label for="first_name">First Name:</label>
+    <input
+    type = "text"
+    name="first_name"
+    id="first_name"
+    value="<%= @first_name %>">
+
+    <label for="last_name">Last Name:</label>
+    <input
+    type = "text"
+    name="last_name"
+    id="last_name"
+    value="<%= @last_name %>">
+
+    <label for="specialty_division">specialty_division:</label>
+    <input
+    type = "text"
+    name="specialty_division"
+    id="specialty_division"
+    value="<%= @specialty_division %>">
+
+<input type = "submit" values="submit">
+</form
