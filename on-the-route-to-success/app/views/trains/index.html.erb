@@ -1,0 +1,10 @@
+<h1>Trains#index</h1>
+<p>yooo<p>
+
+    <% @trains.each do |train| %>
+    <tr>
+        <td><%= train.name %></td>
+        <td><%= link_to 'Show',train %></td>
+        <td><%=link_to 'Edit',
+        edit_train_path(train) %></td>
+        <% end %>

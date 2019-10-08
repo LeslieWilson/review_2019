@@ -1,0 +1,7 @@
+---
+title: "Rails Requests"
+type: "article"
+behaviors:
+  - rails
+description: "Describes how Rails processes HTTP requests."
+tags: "rails, controllers, http, http-request, logs"

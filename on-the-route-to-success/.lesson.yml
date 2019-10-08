@@ -1,0 +1,11 @@
+---
+title: "On The Route To Success"
+type: "exercise"
+description: "learn rails routes and overall rails architecture"
+tags: "rails, rails-routes"
+behaviors:
+  - rails
+  - ruby_and_rspec
+  - capybara
+ignore:
+  - "on-the-route-to-success.md"
