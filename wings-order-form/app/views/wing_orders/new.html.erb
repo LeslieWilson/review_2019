@@ -1,0 +1,17 @@
+<%= form_for(@wing_order) do |f| %>
+<div class = "row">
+    <%=f.label :customer_name %>
+    <%=f.text_field :customer_name %>
+    <br />
+</div>
+
+<div class = "row">
+    <%=f.label :city %>
+    <%=f.text_field :city %>
+    <br />
+</div>
+
+<div class = "row">
+    <%= f.select([['Madrid', 1], ['Lisbon', 2]]) %>
+</div>
+<%end %>

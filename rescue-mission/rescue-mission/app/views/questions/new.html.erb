@@ -1,0 +1,22 @@
+<%= form_for(@question) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br />
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% if @form_error  %>
+<% @form_error.each do |error| %>
+<p><%= error %></p>
+<% end %>
+<% end %>

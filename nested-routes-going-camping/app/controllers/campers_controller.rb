@@ -7,7 +7,7 @@ class CampersController < ApplicationController
 
         @campers = @campsite.campers
     else
-        @title = "all campers"
+        @title = "All Campers:"
         @campers = Camper.all
       end
     end

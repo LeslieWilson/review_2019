@@ -1,0 +1,11 @@
+---
+title: "Wings Order Form"
+type: "exercise"
+description: "Refeactor a wing order form to use rails form helpers"
+tags: "rails, forms"
+behaviors:
+  - rails
+  - ruby_and_rspec
+  - capybara
+ignore:
+  - "wings-order-form.md"

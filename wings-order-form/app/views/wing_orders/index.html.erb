@@ -1,0 +1,7 @@
+
+<% @wing_orders.each do|wing_order| %>
+
+<%= link_to wing_order.name, wing_order_path(wing_order.id) %>
+<%end%>
+
+<p><%=link_to 'New Order', new_wing_order_path %></p>

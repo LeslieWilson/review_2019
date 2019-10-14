@@ -1,0 +1,28 @@
+body {
+  background-color: #EDF6EE
+}
+
+#app {
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color: #D1C089;
+  color: #BA3C3D;
+  border: 5px;
+  border-color: #151101;
+  border-style: solid;
+}
+
+h1 {
+  height: 60px;
+  padding: 5px;
+  color: #BA3C3D;
+}
+
+form {
+  padding: 10px;
+  background-color: #412E28;
+}
+
+label {
+  color: #D1C089;
+}

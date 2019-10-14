@@ -1,0 +1,7 @@
+---
+title: "Fetch in a React Application within Rails"
+type: "article"
+description: "Learn how to fetch data from a Rails back-end"
+behaviors:
+  - rails
+tags: "javascript, react, rails api, hooks"

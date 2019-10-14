@@ -1,0 +1,21 @@
+
+<p>
+<%= @question.title %>
+</p>
+
+<p>
+<%= @question.description %>
+</p>
+
+
+<h5> submitted answers:</h5>
+<ul>
+    <% @question.answers.each do |answer| %>
+
+    <li>
+        <%= answer.description %>
+    </li>
+    <% end %>
+</ul>
+
+<p><%= link_to 'add a new answer', new_question_answer_path(@question) %></p>

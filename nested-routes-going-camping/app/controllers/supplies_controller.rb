@@ -6,7 +6,7 @@ class SuppliesController < ApplicationController
 
     @supplies = @campers.supplies
 else
-    @title = "all supplies"
+    @title = "All Supplies:"
     @supplies = Supply.all
   end
 end

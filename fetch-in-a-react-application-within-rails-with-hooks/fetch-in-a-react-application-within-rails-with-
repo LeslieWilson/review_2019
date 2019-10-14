@@ -1,0 +1,383 @@
+## Learning Objectives
+
+- Fetch data from a Rails API endpoint via Fetch API in React.
+
+## Following Along
+
+The repository we are working with can be retrieved using et. To get quickly set up, do the following:
+
+- Et get the repository, install the necessary gems, set up the database, and run the rails server.
+
+  ```no-highlight
+  et get fetch-in-a-react-application-within-rails-with-hooks
+  cd fetch-in-a-react-application-within-rails-with-hooks
+  bundle install
+  bundle exec rake db:create
+  bundle exec rake db:migrate
+  bundle exec rake db:seed
+  bundle exec rails server -b 0.0.0.0
+  ```
+
+- In another tab, install the necessary NPM packages and run your Webpack Dev Server
+
+  ```no-highlight
+  yarn install
+  yarn run start
+  ```
+
+- In your browser open `localhost:3000`
+
+## Fetch GET calls in React
+
+We have written the following `Fortune` component in `app/javascript/components/Fortune.js`:
+
+```javascript
+import React, { useState } from 'react';
+
+const Fortune = () => {
+  const [getFortune, setFortune] = useState(null)
+
+  return (
+    <h1>Your Fortune: {getFortune}</h1>
+  );
+}
+
+export default Fortune
+```
+
+Our Rails application displays this component at our root index. If we visit the page, we see the following:
+
+![Fetch in Rails React 1][fetch-in-rails-react-1]
+
+We have also built the following API endpoint in our Rails application that returns a random fortune:
+
+```ruby
+#app/controllers/api/fortunes_controller.rb
+class Api::FortunesController < ApiController
+  def show
+    render json: { fortune: Fortune.all.sample }
+  end
+end
+```
+
+We can test the API endpoint by visiting: `localhost:3000/api/fortune`
+And we should see a JSON of a random fortune:
+
+```json
+{"fortune":{"id":29,"text":"Keep it short for pithy sake."}}
+```
+
+We would like our component to display a random fortune from the API. We can accomplish this by calling fetch once the component mounts and setting the new state with the returned fortune if the fetch response is successful. We update our component as such:
+
+```javascript
+import React, { useState, useEffect } from "react"
+
+const Fortune = () => {
+  const [getFortune, setFortune] = useState("")
+
+  useEffect(() => {
+    fetch("/api/fortune.json")
+      .then(response => {
+        if (response.ok) {
+          return response
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage)
+          throw error
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        let fortune = body.fortune.text
+        setFortune(fortune)
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }, [])
+
+  return (
+    <h1>Your Fortune: {getFortune}</h1>
+  );
+}
+
+export default Fortune
+
+```
+
+If we visit our root path again, we now see the following:
+
+![Fetch in Rails React 2][fetch-in-rails-react-2]
+
+You may however get a different fortune due to the fortunes now appearing randomly.
+
+We use the hook `useEffect` run the fetch once the component mounts, the hook method runs, calling fetch to our rails endpoint which will retrieve a random fortune as JSON. We then parse that JSON, use our setFortune setter (provided in `useState`) to set the state of our Fortune component to the newly retrieved fortune from our api, and finally trigger a re-render so that our newly updated Fortune Component displays on the page with the retrieved fortune!
+Since we've included an empty array as the second argument to our `useEffect` the hook won't run a second time unless something causes it to.
+
+Recall that our fetch includes error handling, which will allow the application to return any errors to the browser's console if anything goes wrong, such as receiving a 500 error if a bug exists in the rails code.
+
+### Retrieving more Fortunes using Fetch
+
+Receiving a random fortune when the page loads is nice, but it would be nicer if we added a button that we could click to retrieve a new fortune. Fortunately, we do not need to create a new Rails API endpoint to retrieve the new random fortune; we already have `localhost:3000/api/fortune`. Therefore, we only need to incorporate the button within React.
+
+Let's create our button in our render function in `app/javascript/components/Fortune.js` as well as a `handleClick` function that will essentially make the same fetch call as our `componentDidMount` method:
+
+```javascript
+import React, { useState, useEffect } from "react"
+
+const Fortune = () => {
+  const [getFortune, setFortune] = useState("")
+
+  useEffect(() => {
+    fetch("/api/fortune.json")
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let fortune = body.fortune.text
+      setFortune(fortune)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }, [])
+
+  const handleClick = () => {
+    fetch("/api/fortune.json")
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let fortune = body.fortune.text
+      setFortune(fortune)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
+  return (
+    <>
+    <h1>Your Fortune: {getFortune}</h1>
+    <button className="button" onClick={handleClick}> Click for a new Fortune </button>
+    </>
+  );
+}
+
+export default Fortune
+```
+
+Because we're making the same fetch call twice, we can refactor our code in `componentDidMount` and `handleClick` into a single method:
+
+```javascript
+import React, { useState, useEffect } from "react"
+
+const Fortune = () => {
+  const [getFortune, setFortune] = useState("")
+
+  let fetchFortune = () => {
+    fetch("/api/fortune.json")
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let fortune = body.fortune.text
+      setFortune(fortune)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
+  useEffect(() => {
+    fetchFortune()
+  }, [])
+
+  const handleClick = () => {
+    fetchFortune()
+  }
+
+  return (
+    <>
+    <h1>Your Fortune: {getFortune}</h1>
+    <button className="button" onClick={handleClick}> Click for a new Fortune </button>
+    </>
+  );
+}
+
+export default Fortune
+```
+
+Now if we visit the page we should see the following:
+
+![Fetch in Rails React 3][fetch-in-rails-react-3]
+
+## POST in React using Fetch
+
+We can also use `fetch` to post information. Because a `POST` fetch request creates something in our application, Rails has further securities that would prevent us from using session information (which we would need if wanted to access a user session if we allowed for user authentication with a library like Devise). Let's set up our React application to incorporate a form. We'll need to add an additional header to our `POST` fetch request:
+
+```javascript
+import React, { useState, useEffect } from "react"
+
+const Fortune = () => {
+  const [getFortune, setFortune] = useState("")
+  const [getNewFortune, setNewFortune] = useState("")
+
+  let fetchFortune = () => {
+    fetch("/api/fortune.json")
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let fortune = body.fortune.text
+      setFortune(fortune)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
+  useEffect(() => {
+    fetchFortune()
+  }, [])
+
+  const handleClick = () => {
+    fetchFortune()
+  }
+
+  let handleChange = (event) => {
+    setNewFortune(event.currentTarget.value)
+  }
+
+  let handleSubmit = (event) => {
+    event.preventDefault()
+    let formPayload = {
+      fortune: getNewFortune
+    }
+
+    fetch("/api/fortune", {
+      credentials: "same-origin",
+      method: "POST",
+      body: JSON.stringify(formPayload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage)
+          throw error
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        let newFortune = body.fortune.text
+        setFortune(newFortune)
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
+  return(
+    <>
+    <h1>Your Fortune: {getFortune}</h1>
+    <button className="button" onClick={handleClick}> Click for a new Fortune </button>
+    <form onSubmit={handleSubmit}>
+          <label>New Fortune:</label>
+          <input
+            type="text"
+            value={getNewFortune}
+            onChange={handleChange}
+          />
+          <input type="submit" value="Submit" />
+        </form>
+    </>
+  );
+}
+
+export default Fortune
+```
+
+Now the only thing left to do is create a controller action to process the posting of the form:
+
+```ruby
+#app/controllers/api/fortunes_controller.rb
+class Api::FortunesController < ApiController
+  protect_from_forgery unless: -> { request.format.json? }
+
+  def show
+    render json: { fortune: Fortune.all.sample }
+  end
+
+  def create
+    fortune = Fortune.new(text: params[:fortune])
+    if fortune.save
+      render json: { fortune: fortune }
+    else
+      render json: { error: fortune.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+end
+```
+
+Now we have the ability to see the form:
+
+![Fetch in Rails React 4][fetch-in-rails-react-4]
+
+Fill out the form:
+
+![Fetch in Rails React 5][fetch-in-rails-react-5]
+
+And see our newly created fortune:
+
+![Fetch in Rails React 6][fetch-in-rails-react-6]
+
+We can even check the last fortune to see if it matches our newly created fortune:
+
+```sh
+$ bundle exec rails console
+$ Fortune.last
+# => #<Fortune:0x007f9502fc7170 id: 46, text: "Hey I'm a new Fortune">
+```
+
+### Key differences between Fetch GET and Fetch POST
+
+- Fetch by default will perform an HTTP GET request, so the `handleSubmit` fetch call will take in a set of parameters, including the HTTP method.
+
+- The other parameters include the content type to specify that the data being posted is in a JSON format, the body which is set to the data being posted, and finally the credentials. Because we are manipulating data in our database, we must specify that the fetch call is coming from the same origin as our rails application.
+
+- The create action in our Rails controller requires the `protect_from_forgery unless: -> { request.format.json? }` for our create action in order to successfully access the data sent with the fetch request.
+
+- Finally, we set the state of our fortune to the newly created fortune.
+
+## Summary
+
+In a React application set up within a Rails application, we are able to fetch data from a Rails API endpoint for the React application. We accomplish this through the use of Fetch API and React useEffect hook. With such knowledge, we are now able to leverage both the power of a Rails back-end and the responsiveness of a React front-end in our website!
+
+[fetch-in-rails-react-1]: https://s3.amazonaws.com/horizon-production/images/fetch-in-rails-react-1.png
+[fetch-in-rails-react-2]: https://s3.amazonaws.com/horizon-production/images/fetch-in-rails-react-2.png
+[fetch-in-rails-react-3]: https://s3.amazonaws.com/horizon-production/images/fetch-in-rails-react-3.png
+[fetch-in-rails-react-4]: https://s3.amazonaws.com/horizon-production/images/fetch-in-rails-react-4.png
+[fetch-in-rails-react-5]: https://s3.amazonaws.com/horizon-production/images/fetch-in-rails-react-5.png
+[fetch-in-rails-react-6]: https://s3.amazonaws.com/horizon-production/images/fetch-in-rails-react-6.png
