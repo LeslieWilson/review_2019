@@ -4,15 +4,15 @@ const Fortune = () => {
   const [getFortune, setFortune] = useState("")
   const [getNewFortune, setNewFortune] = useState("")
 
-  let fetchFortune = () => {
+  let fetchFortune = (() => {
     fetch("/api/fortune.json")
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           return response
         } else {
           let errorMessage = `${response.status} (${response.statusText})`,
             error = new Error(errorMessage)
-          throw error
+          throw (error)
         }
       })
       .then(response => response.json())
@@ -52,7 +52,7 @@ fetch("/api/fortune", {
 .then(response =>{
     if (response.ok) {
         return response
-    } else{
+    } else {
         let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage)
         throw error

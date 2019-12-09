@@ -1,0 +1,9 @@
+---
+title: "Building an API in Rails"
+type: "article"
+description: "Introduce how APIs are created in Rails Applications"
+behaviors:
+  - rails
+  - ruby_and_rspec
+  - capybara
+tags: "rails, API, json"
