@@ -3,7 +3,7 @@ GEM
   specs:
     backports (3.15.0)
     coderay (1.1.2)
-    json (2.2.0)
+    json (2.3.0)
     method_source (0.9.2)
     multi_json (1.13.1)
     mustermann (1.0.3)
