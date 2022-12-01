@@ -6,5 +6,5 @@ group :test, :development do
   gem "capybara", "~> 2.15"
 end
 
-gem "sinatra", "~> 2.0"
+gem "sinatra", "~> 2.2"
 gem "sinatra-contrib"
